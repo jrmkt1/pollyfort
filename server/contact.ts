@@ -56,7 +56,7 @@ export async function sendContactEmail(req: Request, res: Response) {
 
     // If SMTP is not configured, just log the email content
     if (!process.env.SMTP_USER) {
-      console.log('📧 Email would be sent to comercial@pollyfortrodas.com.br:');
+      console.log('Email would be sent to vendas@pollyfortrodas.com.br:');
       console.log('Subject:', emailSubject);
       console.log('Content:', emailContent);
       
@@ -71,7 +71,7 @@ export async function sendContactEmail(req: Request, res: Response) {
     
     await transporter.sendMail({
       from: `"Site Pollyfort" <${process.env.SMTP_USER}>`,
-      to: 'comercial@pollyfortrodas.com.br',
+      to: 'vendas@pollyfortrodas.com.br, comercial@pollyfortrodas.com.br',
       subject: emailSubject,
       html: emailContent,
       replyTo: email,

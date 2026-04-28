@@ -9,15 +9,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
             <div className="mb-8">
-              <img 
-                src={headerLogo} 
-                alt="Pollyfort - Rodas e Peças para Empilhadeiras" 
+              <img
+                src={headerLogo}
+                alt="Pollyfort - Rodas e Pecas para Empilhadeiras"
                 className="h-14 w-auto brightness-0 invert"
               />
             </div>
             <p className="text-blue-100 mb-8 max-w-md text-lg leading-relaxed">
-              Especialistas em rodas e peças para empilhadeiras elétricas. Oferecemos soluções completas 
-              com qualidade e durabilidade incomparáveis.
+              Especialistas em rodas e pecas para empilhadeiras eletricas. Oferecemos solucoes completas
+              com qualidade e durabilidade incomparaveis.
             </p>
             <div className="flex space-x-6">
               <a href="#" className="text-blue-200 hover:text-white transition-all duration-300 hover:scale-110 p-2 rounded-full hover:bg-white/10">
@@ -36,11 +36,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-xl font-semibold mb-6 text-white">Links Rápidos</h4>
+            <h4 className="text-xl font-semibold mb-6 text-white">Links Rapidos</h4>
             <ul className="space-y-4">
-              <li><Link href="/" className="text-blue-100 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block">Início</Link></li>
+              <li><Link href="/" className="text-blue-100 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block">Inicio</Link></li>
               <li><Link href="/produtos" className="text-blue-100 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block">Produtos</Link></li>
-              <li><Link href="/sobre-nos" className="text-blue-100 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block">Sobre nós</Link></li>
+              <li><Link href="/sobre-nos" className="text-blue-100 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block">Sobre nos</Link></li>
               <li><Link href="/contatos" className="text-blue-100 hover:text-white transition-all duration-300 hover:translate-x-2 inline-block">Contatos</Link></li>
             </ul>
           </div>
@@ -48,27 +48,33 @@ export default function Footer() {
           <div>
             <h4 className="text-xl font-semibold mb-6 text-white">Contato</h4>
             <div className="space-y-4">
-              <div className="flex items-center group">
+              <div className="flex items-start group">
                 <div className="bg-white/10 p-2 rounded-lg mr-4 group-hover:bg-white/20 transition-colors">
                   <Mail className="h-5 w-5 text-white" />
                 </div>
-                <span className="text-blue-100 group-hover:text-white transition-colors">comercial@pollyfortrodas.com.br</span>
+                <span className="text-blue-100 group-hover:text-white transition-colors">
+                  vendas@pollyfortrodas.com.br<br />
+                  comercial@pollyfortrodas.com.br
+                </span>
               </div>
               <div className="flex items-start group">
                 <div className="bg-white/10 p-2 rounded-lg mr-4 group-hover:bg-white/20 transition-colors">
                   <MapPin className="h-5 w-5 text-white" />
                 </div>
                 <span className="text-blue-100 group-hover:text-white transition-colors">
-                  Av. Anton Von Zuben, 2817, Sala 1<br />
-                  Jd São José, Campinas - SP<br />
-                  CEP: 13051-145
+                  Rua Joaquim Goncalves Cunha, 35<br />
+                  Parque Montreal, Campinas - SP<br />
+                  CEP: 13052-342
                 </span>
               </div>
-              <div className="flex items-center group">
+              <div className="flex items-start group">
                 <div className="bg-white/10 p-2 rounded-lg mr-4 group-hover:bg-white/20 transition-colors">
                   <Phone className="h-5 w-5 text-white" />
                 </div>
-                <span className="text-blue-100 group-hover:text-white transition-colors">(19) 9 9912 8023</span>
+                <span className="text-blue-100 group-hover:text-white transition-colors">
+                  Isabelle Grandolfi: (19) 9 8228-5152<br />
+                  Juliano Malagezi: (19) 9 9419-4339
+                </span>
               </div>
               <div className="flex items-center group">
                 <div className="bg-white/10 p-2 rounded-lg mr-4 group-hover:bg-white/20 transition-colors">

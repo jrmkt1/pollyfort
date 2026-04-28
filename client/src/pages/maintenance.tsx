@@ -158,7 +158,10 @@ export default function MaintenancePage() {
                       <Phone className="h-7 w-7 text-white" />
                     </div>
                     <h4 className="font-bold text-white mb-2 text-lg">Telefone</h4>
-                    <p className="text-gray-300 font-medium">(19) 9 9912 8023</p>
+                    <p className="text-gray-300 font-medium">
+                      Isabelle Grandolfi: (19) 9 8228-5152<br />
+                      Juliano Malagezi: (19) 9 9419-4339
+                    </p>
                   </div>
                 </div>
                 
@@ -168,7 +171,10 @@ export default function MaintenancePage() {
                       <Mail className="h-7 w-7 text-white" />
                     </div>
                     <h4 className="font-bold text-white mb-2 text-lg">E-mail</h4>
-                    <p className="text-gray-300 font-medium">contato@pollyfort.com</p>
+                    <p className="text-gray-300 font-medium">
+                      vendas@pollyfortrodas.com.br<br />
+                      comercial@pollyfortrodas.com.br
+                    </p>
                   </div>
                 </div>
                 
@@ -178,7 +184,7 @@ export default function MaintenancePage() {
                       <MapPin className="h-7 w-7 text-white" />
                     </div>
                     <h4 className="font-bold text-white mb-2 text-lg">Endereço</h4>
-                    <p className="text-gray-300 font-medium">São Paulo, SP</p>
+                    <p className="text-gray-300 font-medium">Rua Joaquim Goncalves Cunha, 35<br />Parque Montreal, Campinas - SP<br />CEP: 13052-342</p>
                   </div>
                 </div>
               </div>

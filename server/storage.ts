@@ -1202,14 +1202,14 @@ class MemoryStorage implements IStorage {
   private companySettingsData: CompanySettings = {
     id: 1,
     name: 'Pollyfort',
-    address: 'Av. Anton Von Zuben, 2817, Sala 1',
+    address: 'Rua Joaquim Goncalves Cunha, 35 - Parque Montreal',
     city: 'Campinas',
     state: 'SP',
-    zipCode: '13051-145',
-    phone: '(19) 9 9419 4339',
-    email: 'comercial@pollyfortrodas.com.br',
+    zipCode: '13052-342',
+    phone: '(19) 9 8228-5152 / (19) 9 9419-4339',
+    email: 'vendas@pollyfortrodas.com.br',
     whatsapp: '5519994194339',
-    website: 'https://pollyfort.com',
+    website: 'https://pollyfortrodas.com.br',
     createdAt: new Date(),
     updatedAt: new Date()
   };

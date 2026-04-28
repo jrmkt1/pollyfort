@@ -76,7 +76,7 @@ export default function Contacts() {
 
   const openWhatsApp = () => {
     const message = "Olá! Gostaria de mais informações sobre os produtos Pollyfort.";
-    const whatsappUrl = `https://wa.me/5519999128023?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/5519994194339?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -104,10 +104,10 @@ export default function Contacts() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Av. Anton Von Zuben, 2817, Sala 1<br />
-                  Jd São José<br />
+                  Rua Joaquim Goncalves Cunha, 35<br />
+                  Parque Montreal<br />
                   Campinas - SP<br />
-                  CEP: 13051-145
+                  CEP: 13052-342
                 </p>
               </CardContent>
             </Card>
@@ -121,7 +121,8 @@ export default function Contacts() {
               </CardHeader>
               <CardContent className="space-y-2">
                 <p className="text-gray-600">
-                  <strong>WhatsApp:</strong> (19) 9 9912 8023
+                  <strong>Isabelle Grandolfi:</strong> (19) 9 8228-5152<br />
+                  <strong>Juliano Malagezi:</strong> (19) 9 9419-4339
                 </p>
               </CardContent>
             </Card>
@@ -135,6 +136,7 @@ export default function Contacts() {
               </CardHeader>
               <CardContent className="space-y-2">
                 <p className="text-gray-600">
+                  <strong>Vendas:</strong> vendas@pollyfortrodas.com.br<br />
                   <strong>Comercial:</strong> comercial@pollyfortrodas.com.br
                 </p>
               </CardContent>
@@ -281,7 +283,7 @@ export default function Contacts() {
             <CardContent>
               <div className="rounded-lg h-96 overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.2842669845847!2d-47.08926668502082!3d-22.897058184825485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8c8f0b0b0b0b0%3A0x0!2sAv.%20Anton%20Von%20Zuben%2C%202817%20-%20Jardim%20S%C3%A3o%20Jos%C3%A9%2C%20Campinas%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr"
+                  src="https://www.google.com/maps?q=Rua%20Joaquim%20Goncalves%20Cunha%2035%20Parque%20Montreal%20Campinas%20SP&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

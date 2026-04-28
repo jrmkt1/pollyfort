@@ -12,8 +12,8 @@ export default function CmsSettingsManager() {
   const [settings] = useState({
     site_title: "Pollyfort CMS",
     site_description: "Sistema de gestão de conteúdo da Pollyfort",
-    site_url: "https://pollyfort.com",
-    admin_email: "admin@pollyfort.com",
+    site_url: "https://pollyfortrodas.com.br",
+    admin_email: "comercial@pollyfortrodas.com.br",
     allow_registration: false,
     moderate_comments: true,
     posts_per_page: 10,
