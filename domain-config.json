@@ -1,0 +1,13 @@
+{
+  "domain": "pollyfortrodas.com.br",
+  "production": true,
+  "https": true,
+  "cors": {
+    "origin": ["https://pollyfortrodas.com.br", "https://www.pollyfortrodas.com.br"],
+    "credentials": true
+  },
+  "headers": {
+    "security": true,
+    "hsts": true
+  }
+}

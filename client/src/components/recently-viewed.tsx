@@ -1,0 +1,79 @@
+import { Clock, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { useRecentlyViewed } from "@/hooks/use-recently-viewed";
+import type { Product } from "@shared/schema";
+
+interface RecentlyViewedProps {
+  onProductClick: (product: Product) => void;
+  onQuotationClick: (product: Product) => void;
+}
+
+export default function RecentlyViewed({ onProductClick, onQuotationClick }: RecentlyViewedProps) {
+  const { recentlyViewed, clearRecentlyViewed } = useRecentlyViewed();
+
+  if (recentlyViewed.length === 0) return null;
+
+  return (
+    <div className="bg-white rounded-lg border border-gray-200 p-6 mb-6">
+      <div className="flex items-center justify-between mb-4">
+        <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-2">
+          <Clock className="h-5 w-5 text-gray-600" />
+          Visualizados Recentemente
+        </h3>
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={clearRecentlyViewed}
+          className="text-gray-500 hover:text-gray-700"
+        >
+          <X className="h-4 w-4 mr-1" />
+          Limpar
+        </Button>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        {recentlyViewed.slice(0, 4).map((product) => (
+          <div key={product.id} className="border border-gray-100 rounded-lg p-3 hover:shadow-sm transition-shadow">
+            <div className="flex gap-3">
+              {product.imageUrl && (
+                <img 
+                  src={product.imageUrl} 
+                  alt={product.name}
+                  className="w-16 h-16 object-cover rounded"
+                />
+              )}
+              <div className="flex-1 min-w-0">
+                <h4 className="font-medium text-sm truncate mb-1">{product.name}</h4>
+                <p className="text-xs text-gray-500 truncate mb-2">{product.code}</p>
+                <div className="flex gap-1 mb-2">
+                  {product.diameter && (
+                    <Badge variant="outline" className="text-xs">Ø {product.diameter}</Badge>
+                  )}
+                </div>
+                <div className="flex gap-1">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => onProductClick(product)}
+                    className="text-xs px-2 py-1 h-6"
+                  >
+                    Ver
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => onQuotationClick(product)}
+                    className="text-xs px-2 py-1 h-6 text-blue-600 border-blue-200"
+                  >
+                    Cotar
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
