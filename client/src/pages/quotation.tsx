@@ -221,7 +221,7 @@ export default function Quotation() {
                                 className="w-full h-full object-cover rounded-full"
                               />
                             ) : (
-                              <div className="text-gray-400 text-xs">🔧</div>
+                              <span className="px-1 text-[7px] font-bold tracking-wide text-gray-500 uppercase leading-tight text-center">IMAGEM EM BREVE</span>
                             )}
                           </div>
                           <div className="flex-1 min-w-0">

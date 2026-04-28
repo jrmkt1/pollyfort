@@ -1,4 +1,4 @@
-import { X, Calculator, Download, Package } from "lucide-react";
+import { X, Calculator, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import type { Product } from "@shared/schema";
@@ -36,8 +36,10 @@ export default function ProductModal({ product, isOpen, onClose, onQuotationClic
                 }}
               />
             ) : null}
-            <div className={`w-full h-64 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center ${product.imageUrl ? 'hidden' : ''}`}>
-              <Package className="w-16 h-16 text-gray-400" />
+            <div className={`w-full h-64 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center text-center ${product.imageUrl ? 'hidden' : ''}`}>
+              <span className="px-6 text-sm font-bold tracking-widest text-gray-500 uppercase">
+                IMAGEM EM BREVE
+              </span>
             </div>
           </div>
 

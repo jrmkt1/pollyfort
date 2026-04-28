@@ -155,11 +155,19 @@ ${formData.message || "Nenhuma mensagem adicional."}
           <div className="space-y-3">
             {actualItems.map(item => (
               <div key={item.product.id} className="flex items-center gap-4 p-4 border rounded-lg">
-                <img 
-                  src={item.product.imageUrl || "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=80&h=80"}
-                  alt={item.product.name}
-                  className="w-16 h-16 object-cover rounded"
-                />
+                {item.product.imageUrl ? (
+                  <img
+                    src={item.product.imageUrl}
+                    alt={item.product.name}
+                    className="w-16 h-16 object-cover rounded"
+                  />
+                ) : (
+                  <div className="w-16 h-16 bg-gray-100 rounded flex items-center justify-center text-center">
+                    <span className="px-1 text-[9px] font-bold tracking-wide text-gray-500 uppercase leading-tight">
+                      IMAGEM EM BREVE
+                    </span>
+                  </div>
+                )}
                 <div className="flex-1">
                   <h4 className="font-medium">{item.product.name}</h4>
                   <p className="text-sm text-gray-600">{item.product.code}</p>

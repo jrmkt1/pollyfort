@@ -66,11 +66,19 @@ export default function CartSidebar({ onQuotationClick }: CartSidebarProps) {
               <div className="space-y-4 max-h-96 overflow-y-auto">
                 {items.map((item) => (
                   <div key={item.product.id} className="flex items-center gap-4 p-4 border border-gray-200 rounded-lg">
-                    <img 
-                      src={item.product.imageUrl || "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100"}
-                      alt={item.product.name}
-                      className="w-16 h-16 object-cover rounded-md"
-                    />
+                    {item.product.imageUrl ? (
+                      <img
+                        src={item.product.imageUrl}
+                        alt={item.product.name}
+                        className="w-16 h-16 object-cover rounded-md"
+                      />
+                    ) : (
+                      <div className="w-16 h-16 bg-gray-100 rounded-md flex items-center justify-center text-center">
+                        <span className="px-1 text-[9px] font-bold tracking-wide text-gray-500 uppercase leading-tight">
+                          IMAGEM EM BREVE
+                        </span>
+                      </div>
+                    )}
                     <div className="flex-1">
                       <h4 className="font-semibold text-sm">{item.product.name}</h4>
                       <p className="text-xs text-gray-500">{item.product.code}</p>

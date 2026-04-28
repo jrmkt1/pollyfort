@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Star, Calculator, Eye, ShoppingCart, Heart, Package, MessageCircle } from "lucide-react";
+import { Star, Calculator, Eye, ShoppingCart, Heart, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useCart } from "@/hooks/use-cart";
@@ -23,6 +23,7 @@ export default function ProductCard({ product, onQuotationClick, onDetailsClick,
   const [isWhatsAppOpen, setIsWhatsAppOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [imageKey, setImageKey] = useState(Date.now());
+  const [imageFailed, setImageFailed] = useState(false);
   const [forceReload, setForceReload] = useState(0);
   const cardRef = useRef<HTMLDivElement>(null);
   const ratingStars = Math.round((product.rating || 0) / 10);
@@ -56,11 +57,25 @@ export default function ProductCard({ product, onQuotationClick, onDetailsClick,
     const handleImageReload = () => {
       setImageKey(prev => prev + 1);
       setImageLoaded(false);
+      setImageFailed(false);
     };
 
     window.addEventListener('forceImageReload', handleImageReload);
     return () => window.removeEventListener('forceImageReload', handleImageReload);
   }, []);
+
+  useEffect(() => {
+    setImageLoaded(false);
+    setImageFailed(false);
+  }, [product.imageUrl]);
+
+  const ImageSoonPlaceholder = ({ className = "" }: { className?: string }) => (
+    <div className={`bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center text-center ${className}`}>
+      <span className="px-4 text-xs font-bold tracking-widest text-gray-500 uppercase">
+        IMAGEM EM BREVE
+      </span>
+    </div>
+  );
 
   const handleAddToCart = () => {
     addToCart(product);
@@ -97,7 +112,7 @@ export default function ProductCard({ product, onQuotationClick, onDetailsClick,
         <div className="flex p-4 gap-4">
           <div className="relative overflow-hidden w-32 h-32 flex-shrink-0">
             {isVisible ? (
-              product.imageUrl ? (
+              product.imageUrl && !imageFailed ? (
                 <img 
                   src={product.imageUrl.split('?')[0] + `?cb=${Date.now()}&k=${imageKey}&r=${forceReload}`}
                   key={`product-${product.id}-${imageKey}-${forceReload}`} 
@@ -109,12 +124,11 @@ export default function ProductCard({ product, onQuotationClick, onDetailsClick,
                   onError={() => {
                     console.log('Image error for product:', product.name, product.imageUrl);
                     setImageLoaded(true);
+                    setImageFailed(true);
                   }}
                 />
               ) : (
-                <div className="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center">
-                  <Package className="w-8 h-8 text-gray-400" />
-                </div>
+                <ImageSoonPlaceholder className="w-full h-full rounded-lg" />
               )
             ) : (
               <div className="w-full h-full bg-gray-200 rounded-lg animate-pulse"></div>
@@ -202,7 +216,7 @@ export default function ProductCard({ product, onQuotationClick, onDetailsClick,
     <div ref={cardRef} className="bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-modern transition-all duration-300 group animate-fade-in m-2 flex flex-col h-full">
       <div className="relative overflow-hidden">
         {isVisible ? (
-          product.imageUrl ? (
+          product.imageUrl && !imageFailed ? (
             <img 
               src={product.imageUrl.replace(/\?.*$/, '') + `?cb=${Date.now()}&k=${imageKey}`}
               key={`product-grid-${product.id}-${imageKey}`} 
@@ -214,12 +228,11 @@ export default function ProductCard({ product, onQuotationClick, onDetailsClick,
               onError={() => {
                 console.log('Image error for product:', product.name, product.imageUrl);
                 setImageLoaded(true);
+                setImageFailed(true);
               }}
             />
           ) : (
-            <div className="w-full h-48 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-              <Package className="w-12 h-12 text-gray-400" />
-            </div>
+            <ImageSoonPlaceholder className="w-full h-48" />
           )
         ) : (
           <div className="w-full h-48 bg-gray-200 animate-pulse"></div>

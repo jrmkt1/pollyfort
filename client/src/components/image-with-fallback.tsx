@@ -65,8 +65,8 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
     return (
       <div className={`${className} bg-gray-200 dark:bg-gray-700 flex items-center justify-center`}>
         <div className="text-center p-4">
-          <div className="text-gray-400 dark:text-gray-500 text-sm">
-            Imagem não disponível
+          <div className="text-gray-500 dark:text-gray-400 text-xs font-bold tracking-widest uppercase">
+            IMAGEM EM BREVE
           </div>
           <button 
             onClick={() => {
@@ -87,7 +87,7 @@ export const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
     <div className={`relative ${className}`}>
       {isLoading && (
         <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 animate-pulse flex items-center justify-center">
-          <div className="text-gray-400 dark:text-gray-500 text-sm">
+          <div className="text-gray-500 dark:text-gray-400 text-xs font-bold tracking-widest uppercase">
             Carregando...
           </div>
         </div>

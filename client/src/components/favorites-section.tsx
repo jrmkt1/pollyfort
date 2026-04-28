@@ -48,12 +48,18 @@ export default function FavoritesSection({ onProductClick, onQuotationClick }: F
         {favorites.map((product) => (
           <div key={product.id} className="border border-gray-100 rounded-lg p-4 hover:shadow-sm transition-shadow group">
             <div className="relative mb-3">
-              {product.imageUrl && (
+              {product.imageUrl ? (
                 <img 
                   src={product.imageUrl} 
                   alt={product.name}
                   className="w-full h-32 object-cover rounded"
                 />
+              ) : (
+                <div className="w-full h-32 bg-gray-100 rounded flex items-center justify-center text-center">
+                  <span className="px-4 text-xs font-bold tracking-widest text-gray-500 uppercase">
+                    IMAGEM EM BREVE
+                  </span>
+                </div>
               )}
               <Button
                 variant="ghost"

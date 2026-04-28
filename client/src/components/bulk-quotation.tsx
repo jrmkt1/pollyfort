@@ -121,12 +121,18 @@ export default function BulkQuotation({ isOpen, onClose }: BulkQuotationProps) {
             <div className="space-y-3 max-h-60 overflow-y-auto">
               {items.map((item) => (
                 <div key={item.product.id} className="bg-white rounded p-3 flex items-center gap-3">
-                  {item.product.imageUrl && (
+                  {item.product.imageUrl ? (
                     <img 
                       src={item.product.imageUrl} 
                       alt={item.product.name}
                       className="w-12 h-12 object-cover rounded"
                     />
+                  ) : (
+                    <div className="w-12 h-12 bg-gray-100 rounded flex items-center justify-center text-center">
+                      <span className="px-1 text-[8px] font-bold tracking-wide text-gray-500 uppercase leading-tight">
+                        IMAGEM EM BREVE
+                      </span>
+                    </div>
                   )}
                   <div className="flex-1 min-w-0">
                     <p className="font-medium text-sm truncate">{item.product.name}</p>

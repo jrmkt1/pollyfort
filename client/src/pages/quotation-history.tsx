@@ -233,11 +233,19 @@ export default function QuotationHistory() {
                               <div className="space-y-3">
                                 {quotation.quotationItems.map((item) => (
                                   <div key={item.id} className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
-                                    <img 
-                                      src={item.product.imageUrl || "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=60&h=60"}
-                                      alt={item.product.name}
-                                      className="w-12 h-12 object-cover rounded"
-                                    />
+                                    {item.product.imageUrl ? (
+                                      <img
+                                        src={item.product.imageUrl}
+                                        alt={item.product.name}
+                                        className="w-12 h-12 object-cover rounded"
+                                      />
+                                    ) : (
+                                      <div className="w-12 h-12 bg-gray-100 rounded flex items-center justify-center text-center">
+                                        <span className="px-1 text-[8px] font-bold tracking-wide text-gray-500 uppercase leading-tight">
+                                          IMAGEM EM BREVE
+                                        </span>
+                                      </div>
+                                    )}
                                     <div className="flex-1">
                                       <p className="font-medium text-sm">{item.product.name}</p>
                                       <p className="text-xs text-gray-500">{item.product.code}</p>
