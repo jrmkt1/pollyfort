@@ -302,7 +302,7 @@ app.use("/api/storage", storageRepairRoutes);  // Product upload functionality
       log("Application will continue without seeding - database may need manual setup");
     }
 
-    const PORT = 5000;
+    const PORT = parseInt(process.env.PORT || '5000', 10);
     app.listen(PORT, "0.0.0.0", () => {
       log(`serving on port ${PORT}`);
     });
