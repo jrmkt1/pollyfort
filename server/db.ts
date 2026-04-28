@@ -8,7 +8,8 @@ function getDatabaseConfig() {
   if (process.env.DATABASE_URL) {
     return {
       connectionString: process.env.DATABASE_URL,
-      ssl: false
+      ssl: false,
+      connectionTimeoutMillis: 1500
     };
   }
   
@@ -19,7 +20,8 @@ function getDatabaseConfig() {
     database: process.env.PGDATABASE || 'postgres',
     user: process.env.PGUSER || 'postgres',
     password: process.env.PGPASSWORD || '',
-    ssl: false
+    ssl: false,
+    connectionTimeoutMillis: 1500
   };
 }
 

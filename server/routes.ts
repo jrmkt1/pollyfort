@@ -97,9 +97,23 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // Products API with enhanced JOIN support
   app.get("/api/products", async (req, res) => {
+    const { search, category, brand_id, category_id } = req.query;
+    const importedFallback = () =>
+      getImportedProducts({
+        search: typeof search === "string" ? search : undefined,
+        category: typeof category === "string" ? category : undefined,
+        brandId: typeof brand_id === "string" ? parseInt(brand_id) || undefined : undefined,
+        categoryId: typeof category_id === "string" ? parseInt(category_id) || undefined : undefined,
+      });
+
     try {
-      const { search, category, brand_id, category_id } = req.query;
       console.log("Products query params:", { search, category, brand_id, category_id });
+
+      if (process.env.NODE_ENV === "production" && !process.env.DATABASE_URL) {
+        const fallbackProducts = importedFallback();
+        console.log(`[products] Retornados ${fallbackProducts.length} produtos importados do CSV`);
+        return res.json(fallbackProducts);
+      }
       
       // Use database directly for filtering with JOIN queries
       const { db } = await import('./db');
@@ -171,13 +185,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error("Error fetching products:", error);
 
-      const { search, category, brand_id, category_id } = req.query;
-      const fallbackProducts = getImportedProducts({
-        search: typeof search === "string" ? search : undefined,
-        category: typeof category === "string" ? category : undefined,
-        brandId: typeof brand_id === "string" ? parseInt(brand_id) || undefined : undefined,
-        categoryId: typeof category_id === "string" ? parseInt(category_id) || undefined : undefined,
-      });
+      const fallbackProducts = importedFallback();
 
       console.log(`[products] Retornados ${fallbackProducts.length} produtos importados do CSV`);
       res.json(fallbackProducts);
