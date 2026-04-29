@@ -12,7 +12,7 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 );
 
 export const WhatsAppFloat: React.FC = () => {
-  const whatsappNumber = '5519994194339';
+  const whatsappNumber = '5519982285152';
   const whatsappUrl = `https://wa.me/${whatsappNumber}`;
 
   const handleWhatsAppClick = () => {

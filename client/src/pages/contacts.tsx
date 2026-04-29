@@ -76,7 +76,7 @@ export default function Contacts() {
 
   const openWhatsApp = () => {
     const message = "Olá! Gostaria de mais informações sobre os produtos Pollyfort.";
-    const whatsappUrl = `https://wa.me/5519994194339?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/5519982285152?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 

@@ -1208,7 +1208,7 @@ class MemoryStorage implements IStorage {
     zipCode: '13052-342',
     phone: '(19) 9 8228-5152 / (19) 9 9419-4339',
     email: 'vendas@pollyfortrodas.com.br',
-    whatsapp: '5519994194339',
+    whatsapp: '5519982285152',
     website: 'https://pollyfortrodas.com.br',
     createdAt: new Date(),
     updatedAt: new Date()

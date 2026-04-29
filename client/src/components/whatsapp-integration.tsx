@@ -57,7 +57,7 @@ export default function WhatsAppIntegration({ product, isOpen, onClose }: WhatsA
     }
 
     const whatsappMessage = generateWhatsAppMessage();
-    const whatsappNumber = "5519994194339"; // Business WhatsApp number
+    const whatsappNumber = "5519982285152"; // Business WhatsApp number
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
     window.open(whatsappUrl, '_blank');
