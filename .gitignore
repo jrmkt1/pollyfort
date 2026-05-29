@@ -55,8 +55,11 @@ Thumbs.db
 *.tmp
 *.temp
 vite.config.ts.*
+.agents/
+.config/
 .cache/
 .upm/
+.vercel/
 node_modules_broken_*/
 pollyfort-export
 
