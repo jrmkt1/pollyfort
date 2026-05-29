@@ -1202,10 +1202,10 @@ class MemoryStorage implements IStorage {
   private companySettingsData: CompanySettings = {
     id: 1,
     name: 'Pollyfort',
-    address: 'R Antonio do Valle Melo, 88 - Centro',
-    city: 'Sumare',
+    address: 'R ANTONIO DO VALLE MELO Nº88 - Centro',
+    city: 'Sumaré',
     state: 'SP',
-    zipCode: '13170-010',
+    zipCode: '13.170-010',
     phone: '(19) 9 8228-5152 / (19) 9 9419-4339',
     email: 'vendas@pollyfortrodas.com.br',
     whatsapp: '5519999128023',
