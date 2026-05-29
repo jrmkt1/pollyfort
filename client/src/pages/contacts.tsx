@@ -76,7 +76,7 @@ export default function Contacts() {
 
   const openWhatsApp = () => {
     const message = "Olá! Gostaria de mais informações sobre os produtos Pollyfort.";
-    const whatsappUrl = `https://wa.me/5519982285152?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/5519999128023?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -104,10 +104,10 @@ export default function Contacts() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  Rua Joaquim Goncalves Cunha, 35<br />
-                  Parque Montreal<br />
-                  Campinas - SP<br />
-                  CEP: 13052-342
+                  R Antonio do Valle Melo, 88<br />
+                  Centro<br />
+                  Sumare - SP<br />
+                  CEP: 13170-010
                 </p>
               </CardContent>
             </Card>
@@ -283,7 +283,7 @@ export default function Contacts() {
             <CardContent>
               <div className="rounded-lg h-96 overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps?q=Rua%20Joaquim%20Goncalves%20Cunha%2035%20Parque%20Montreal%20Campinas%20SP&output=embed"
+                  src="https://www.google.com/maps?q=R%20Antonio%20do%20Valle%20Melo%2088%20Centro%20Sumare%20SP&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

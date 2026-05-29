@@ -184,7 +184,7 @@ export default function MaintenancePage() {
                       <MapPin className="h-7 w-7 text-white" />
                     </div>
                     <h4 className="font-bold text-white mb-2 text-lg">Endereço</h4>
-                    <p className="text-gray-300 font-medium">Rua Joaquim Goncalves Cunha, 35<br />Parque Montreal, Campinas - SP<br />CEP: 13052-342</p>
+                    <p className="text-gray-300 font-medium">R Antonio do Valle Melo, 88<br />Centro, Sumare - SP<br />CEP: 13170-010</p>
                   </div>
                 </div>
               </div>

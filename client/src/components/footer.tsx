@@ -62,9 +62,9 @@ export default function Footer() {
                   <MapPin className="h-5 w-5 text-white" />
                 </div>
                 <span className="text-blue-100 group-hover:text-white transition-colors">
-                  Rua Joaquim Goncalves Cunha, 35<br />
-                  Parque Montreal, Campinas - SP<br />
-                  CEP: 13052-342
+                  R Antonio do Valle Melo, 88<br />
+                  Centro, Sumare - SP<br />
+                  CEP: 13170-010
                 </span>
               </div>
               <div className="flex items-start group">
