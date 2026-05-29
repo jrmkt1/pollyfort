@@ -184,7 +184,7 @@ export default function MaintenancePage() {
                       <MapPin className="h-7 w-7 text-white" />
                     </div>
                     <h4 className="font-bold text-white mb-2 text-lg">Endereço</h4>
-                    <p className="text-gray-300 font-medium">R Antonio do Valle Melo, 88<br />Centro, Sumare - SP<br />CEP: 13170-010</p>
+                    <p className="text-gray-300 font-medium">R ANTONIO DO VALLE MELO Nº88<br />Centro - Sumaré/SP<br />CEP: 13.170-010</p>
                   </div>
                 </div>
               </div>

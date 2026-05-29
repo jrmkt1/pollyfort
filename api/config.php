@@ -8,8 +8,8 @@ define('DB_NAME', 'pollyfort_db');
 // Company information
 define('COMPANY_NAME', 'Pollyfort');
 define('COMPANY_EMAIL', 'comercial@pollyfortrodas.com.br');
-define('COMPANY_PHONE', '(19) 99999-9999');
-define('COMPANY_ADDRESS', 'Rua da Consolação, nº 125, Jd. Belvedere, Araras - SP, CEP: 13601-060');
+define('COMPANY_PHONE', '(19) 99912-8023');
+define('COMPANY_ADDRESS', 'R ANTONIO DO VALLE MELO Nº88 - Centro - Sumaré/SP - CEP: 13.170-010');
 define('COMPANY_CNPJ', '45.647.003/0001-50');
 
 // Email configuration

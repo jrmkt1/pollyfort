@@ -104,10 +104,9 @@ export default function Contacts() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  R Antonio do Valle Melo, 88<br />
-                  Centro<br />
-                  Sumare - SP<br />
-                  CEP: 13170-010
+                  R ANTONIO DO VALLE MELO Nº88<br />
+                  Centro - Sumaré/SP<br />
+                  CEP: 13.170-010
                 </p>
               </CardContent>
             </Card>

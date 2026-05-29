@@ -96,11 +96,11 @@ INSERT INTO settings (setting_key, setting_value) VALUES
 ('site_title', 'Pollyfort - Rodas para Empilhadeiras'),
 ('company_name', 'Pollyfort'),
 ('company_email', 'comercial@pollyfortrodas.com.br'),
-('company_phone', '(19) 99999-9999'),
-('company_address', 'Rua da Consolação, nº 125, Jd. Belvedere, Araras - SP, CEP: 13601-060'),
+('company_phone', '(19) 99912-8023'),
+('company_address', 'R ANTONIO DO VALLE MELO Nº88 - Centro - Sumaré/SP - CEP: 13.170-010'),
 ('company_cnpj', '45.647.003/0001-50'),
-('meta_description', 'Especialista em rodas de poliuretano para empilhadeiras. Qualidade superior, durabilidade garantida e atendimento personalizado em Araras-SP.'),
-('meta_keywords', 'rodas empilhadeira, poliuretano, rodas tração, rodas carga, rodas direcionais, Araras SP'),
+('meta_description', 'Especialista em rodas de poliuretano para empilhadeiras. Qualidade superior, durabilidade garantida e atendimento personalizado em Sumaré-SP.'),
+('meta_keywords', 'rodas empilhadeira, poliuretano, rodas tração, rodas carga, rodas direcionais, Sumaré SP'),
 ('google_analytics_id', ''),
 ('facebook_pixel_id', ''),
-('whatsapp_number', '5519999999999');
+('whatsapp_number', '5519999128023');

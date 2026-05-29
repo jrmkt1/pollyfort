@@ -62,9 +62,9 @@ export default function Footer() {
                   <MapPin className="h-5 w-5 text-white" />
                 </div>
                 <span className="text-blue-100 group-hover:text-white transition-colors">
-                  R Antonio do Valle Melo, 88<br />
-                  Centro, Sumare - SP<br />
-                  CEP: 13170-010
+                  R ANTONIO DO VALLE MELO Nº88<br />
+                  Centro - Sumaré/SP<br />
+                  CEP: 13.170-010
                 </span>
               </div>
               <div className="flex items-start group">
