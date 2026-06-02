@@ -8,6 +8,8 @@ yarn-error.log*
 dist/
 build/
 server/public/
+!dist/
+!dist/**
 
 # Environment variables
 .env
@@ -73,6 +75,7 @@ pollyfort-*.zip
 # Upload directories (keep structure but ignore content)
 uploads/products/*
 !uploads/products/.gitkeep
+!uploads/products/**
 
 # Development files
 cookies.txt

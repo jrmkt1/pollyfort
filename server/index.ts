@@ -1,5 +1,7 @@
 import express, { type Request, Response, NextFunction } from "express";
+import { createServer } from "http";
 import path from "path";
+import { pathToFileURL } from "url";
 import { registerRoutes } from "./routes";
 import simpleRoutes from "./routes-simple";
 import productRoutes from "./routes-products";
@@ -9,7 +11,7 @@ import storageRepairRoutes from "./routes-storage-repair";
 import testUploadRoutes from "./test-upload";
 import { brandsAndCategoriesRouter } from "./routes-brands-categories";
 import enhancedProductRoutes from "./routes-products-enhanced";
-import { setupVite, serveStatic, log } from "./vite";
+import { log } from "./log";
 import { seedDatabase } from "./seed";
 import session from "express-session";
 import { getDB } from './db';
@@ -28,6 +30,7 @@ process.on('uncaughtException', (error) => {
 });
 
 const app = express();
+let appReady: Promise<express.Express> | null = null;
 
 // CORS middleware for production
 app.use((req, res, next) => {
@@ -136,8 +139,17 @@ app.use((req, res, next) => {
   next();
 });
 
+type CreateAppOptions = {
+  serveClient?: boolean;
+};
+
 // Wrap all async operations in an async function to avoid top-level await
-async function startServer() {
+export async function createApp(options: CreateAppOptions = {}) {
+  if (appReady) return appReady;
+
+  const { serveClient = true } = options;
+
+  appReady = (async () => {
   try {
 
     // Admin session middleware
@@ -282,10 +294,23 @@ app.use("/api/storage", storageRepairRoutes);  // Product upload functionality
       });
     });
 
-    if (app.get("env") === "development") {
-      await setupVite(app);
-    } else {
+    if (serveClient && app.get("env") === "development") {
+      const server = createServer(app);
+      const { setupVite } = await import("./vite");
+      await setupVite(app, server);
+    } else if (serveClient) {
+      const { serveStatic } = await import("./vite");
       serveStatic(app);
+    } else {
+      app.use((req, res) => {
+        res.status(404).json({ error: "API route not found" });
+      });
+    }
+
+    if (serveClient && app.get("env") === "development") {
+      // setupVite owns the fallback middleware; the server is started by startServer.
+    } else {
+      // Production static serving or API-only fallback has already been configured.
     }
 
     // Global error handler
@@ -302,19 +327,32 @@ app.use("/api/storage", storageRepairRoutes);  // Product upload functionality
       log("Application will continue without seeding - database may need manual setup");
     }
 
-    const PORT = parseInt(process.env.PORT || '5000', 10);
-    app.listen(PORT, "0.0.0.0", () => {
-      log(`serving on port ${PORT}`);
-    });
+    return app;
 
   } catch (error) {
     console.error("Failed to start server:", error);
-    process.exit(1);
+    appReady = null;
+    throw error;
   }
+  })();
+
+  return appReady;
+}
+
+export async function startServer() {
+  const configuredApp = await createApp({ serveClient: true });
+  const PORT = parseInt(process.env.PORT || '5000', 10);
+  configuredApp.listen(PORT, "0.0.0.0", () => {
+    log(`serving on port ${PORT}`);
+  });
 }
 
 // Start the server
-startServer().catch((error) => {
-  console.error("Unhandled error during server startup:", error);
-  process.exit(1);
-});
+const isDirectRun = process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
+
+if (isDirectRun) {
+  startServer().catch((error) => {
+    console.error("Unhandled error during server startup:", error);
+    process.exit(1);
+  });
+}
