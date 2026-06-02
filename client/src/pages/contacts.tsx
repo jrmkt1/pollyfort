@@ -120,8 +120,7 @@ export default function Contacts() {
               </CardHeader>
               <CardContent className="space-y-2">
                 <p className="text-gray-600">
-                  <strong>Isabelle Grandolfi:</strong> (19) 9 8228-5152<br />
-                  <strong>Juliano Malagezi:</strong> (19) 9 9419-4339
+                  <strong>Atendimento:</strong> (19) 9 9912-8023
                 </p>
               </CardContent>
             </Card>
